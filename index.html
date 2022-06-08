@@ -6,10 +6,11 @@
 	<title></title>
 </head>
 <body>
-<form action="/compose" method="post">
-	<input type="text" name="newPostTitle">
-	<input type="textaread" name="newPostDesc">
-	<button type="submit" name="publish">Publish</button>
-</form>
+
+<h1>Home</h1>
+<p><%=content%></p>
+<div class="post">
+	<% console.log(posts.title)%>
+</div>
 </body>
 </html>
