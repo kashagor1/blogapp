@@ -1,0 +1,61 @@
+
+/*https://www.mongodb.com/docs/manual/crud/#create-operations*/
+
+use <databaseName>//To create or select database
+
+/*db.<collectionName>.insertOne({}) This will create a new collection if none exist or add new records to the collection we can pass java script objects as parameter like the two example bellow */
+
+
+db.customer.insertOne({
+	_id:1,  // it's deafult key generated in each collection
+	customerName: "Jakir",
+	customerLastName: "Mia",
+	age: 21,
+	address: "New York City"
+})
+
+
+db.products.insertOne({
+	_id:3,
+	name:"Chips",
+	price: 10,
+	company: "Bombay Sweets",
+	reviews:[{
+		clinetName: "Jakir",
+		rating: 4,
+		review: "It's not as it used to be"
+	},{
+		clinetName: "Sakib",
+		rating: 5,
+		review: "It's as great as ever"
+	}
+	]
+})
+
+
+/*This is used to find or view a particular useing query we cal also some pointer to too
+
+https://www.mongodb.com/docs/manual/tutorial/query-documents/#std-label-read-operations-query-argument
+
+https://www.mongodb.com/docs/manual/reference/operator/query/#std-label-query-selectors
+
+
+ */
+
+db.customer.find({_id:2})
+
+/*we can also use expressions with the operator */
+
+
+
+db.customer.updateOne({	_id : 10 } , {	$set:{ name: "Shagor",age: 21 } })
+
+/*Basically the first the is the query and we can select data according to the query and the second parameter can help use set the one more data*/
+
+
+
+/*This used to delete a particular (we have send the query as parameter ) record from a particular (customer) collections */
+
+db.customer.deleteOne({
+	_id: 2
+})
