@@ -2,10 +2,10 @@
 
 <h1>Home</h1>
 <p><%=content%></p>
-<% posts.forEach((post)=>{ var postContent= post.content.substring(0,100);%>
-<h1><%=post.title%></h1>
+<% posts.forEach((post)=>{ var postContent= post.description.substring(0,100);%>
+<h1><%=post.name%></h1>
 <p><%=postContent+ " ..."%>
-<a href="posts/<%=post.title%>">Read More</a>
+<a href="posts/<%=post._id%>">Read More</a>
 </p>
 <%})%>
 	
